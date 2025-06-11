@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Health Summary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🧾 Your Health Summary:</h1>
+
+        <p><strong>BMI:</strong> {{ result.bmi }} ({{ result.category }})</p>
+        <p><strong>Water Intake Goal:</strong> {{ result.water_goal }} liters/day</p>
+        <p><strong>Activity Level:</strong> {{ result.activity }}</p>
+        <p><strong>Medical Condition:</strong> {{ result.condition }}</p>
+        <p><strong>Goal:</strong> {{ result.goal }}</p>
+
+        <h3>🍴 Food Suggestions:</h3>
+        <ul>
+            {% for food in result.foods %}
+                <li>{{ food }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>📅 Weekly Meal Plan:</h3>
+        <table class="meal-plan-table">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Breakfast</th>
+                    <th>Lunch</th>
+                    <th>Dinner</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for day, meals in result.weekly_meal_plan.items() %}
+                <tr>
+                    <td>{{ day }}</td>
+                    <td>{{ meals.Breakfast }}</td>
+                    <td>{{ meals.Lunch }}</td>
+                    <td>{{ meals.Dinner }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        Made with ❤️ for your health | AI Diet Chatbot
+    </footer>
+</body>
+</html>

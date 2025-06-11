@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Diet Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🥗 AI Diet Chatbot 🍎</h1>
+        <form action="/" method="post">
+            <label for="age">🎂 Age:</label>
+            <input type="number" name="age" id="age" required>
+
+            <label for="weight">⚖️ Weight (kg):</label>
+            <input type="number" name="weight" id="weight" required>
+
+            <label for="height">📏 Height (cm):</label>
+            <input type="number" name="height" id="height" required>
+
+            <label for="activity">🏃 Activity Level:</label>
+            <select name="activity" id="activity">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+
+            <label for="condition">🩺 Medical Condition / Dietary Restriction:</label>
+            <select name="condition" id="condition">
+                <option value="None">None</option>
+                <option value="Diabetes">Diabetes</option>
+                <option value="Hypertension">Hypertension</option>
+                <option value="Lactose Intolerance">Lactose Intolerance</option>
+            </select>
+
+            <label for="goal">🎯 Health Goal:</label>
+            <select name="goal" id="goal" required>
+                <option value="gain">Gain Weight</option>
+                <option value="lose">Lose Weight</option>
+                <option value="maintain">Maintain Weight</option>
+            </select>
+
+            <button type="submit">Get My Plan 💪</button>
+        </form>
+    </div>
+
+    <footer>
+        Made with ❤️ for your health | AI Diet Chatbot
+    </footer>
+</body>
+</html>

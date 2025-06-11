@@ -1,0 +1,213 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+            url('/static/images/background_files/Background.jpg') no-repeat center center fixed;
+
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    animation: fadeInBody 2s ease-in;
+}
+.container {
+    max-width: 650px;
+    margin: 50px auto;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: slideInContainer 1.5s ease;
+}
+
+
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.container {
+    max-width: 650px;
+    margin: 50px auto;
+    background: #ffffffcc;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: slideInContainer 1.5s ease;
+}
+
+@keyframes slideInContainer {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px #ccc;
+    animation: popIn 1s ease;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 18px;
+    color: #34495e;
+    text-align: left;
+}
+
+input, select, button {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.result {
+    text-align: left;
+    background-color: #ecf9f8;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 30px;
+    animation: fadeInResult 1.5s ease-in;
+}
+
+@keyframes fadeInResult {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.result h2, .result h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #2ecc71;
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    font-size: 18px;
+    padding: 5px 0;
+    position: relative;
+    padding-left: 25px;
+    animation: fadeInList 1s ease-in;
+}
+
+ul li::before {
+    content: "🍽️";
+    position: absolute;
+    left: 0;
+    top: 3px;
+}
+
+@keyframes fadeInList {
+    0% { opacity: 0; transform: translateX(-10px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+.meal-plan-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    animation: fadeInTable 2s ease;
+}
+
+@keyframes fadeInTable {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.meal-plan-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    font-size: 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeInTable 2s ease;
+}
+
+.meal-plan-table th, .meal-plan-table td {
+    border: 1px solid #dfe6e9;
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.meal-plan-table th {
+    background-color: #2ecc71;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.meal-plan-table td {
+    background-color: #ffffffdd;
+    color: #2c3e50;
+}
+
+.meal-plan-table tr:nth-child(even) td {
+    background-color: #ecf0f1;
+}
+
+
+@keyframes fadeInFooter {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Add emoji decorations */
+form label::before {
+    content: "📝 ";
+}
+
+h1::after {
+    content: " 🥗";
+}
